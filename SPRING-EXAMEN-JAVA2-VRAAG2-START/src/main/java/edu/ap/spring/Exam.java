@@ -32,11 +32,7 @@ public class Exam {
 	// x-coordinaten uit de lijst van points te berekenen
 	// 1 punt
 	public int sumOfX(List<Point> points) {
-		int count = 0;
-		for (Point point : points) {
-			count+= point.getX();
-		}
-		return count;
+		return (points.stream().filter(x -> x.getX()).count());
 	}
 	
 	// Maak gebruik van lambdas en streams om een comma-separated
@@ -44,12 +40,11 @@ public class Exam {
 	// zijn aan twee
 	// 2 punten
 	public String getXOverTwo(List<Point> points) {
+		
 		String result = "";
-		for (Point point : points) {
-			if (point.getX() >= 2) {
-				result += point.getX()+ ", ";
-			}
-		}
+		
+		result = points.stream().filter(x -> x.getX() >= 2).toString();
+		result = result.concat(", ");
 		return result;
 		
 	}
