@@ -16,5 +16,11 @@ public class ExamApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ExamApplication.class, args);
+		
+		Exam exam = new Exam();
+		
+		int[] getallen = {1,2,3,4,5,6,7,8,9,10};
+		exam.getPrimes(getallen);
+		
 	}
 }
